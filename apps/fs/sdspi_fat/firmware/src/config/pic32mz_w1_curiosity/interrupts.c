@@ -66,17 +66,17 @@ void SPI2_TX_InterruptHandler( void );
 
 
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_CORE_TIMER_VECTOR, ipl1AUTO) CORE_TIMER_Handler (void)
+void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
 }
 
-void __ISR(_SPI2_RX_VECTOR, ipl1AUTO) SPI2_RX_Handler (void)
+void __ISR(_SPI2_RX_VECTOR, ipl1SRS) SPI2_RX_Handler (void)
 {
     SPI2_RX_InterruptHandler();
 }
 
-void __ISR(_SPI2_TX_VECTOR, ipl1AUTO) SPI2_TX_Handler (void)
+void __ISR(_SPI2_TX_VECTOR, ipl1SRS) SPI2_TX_Handler (void)
 {
     SPI2_TX_InterruptHandler();
 }
