@@ -155,6 +155,7 @@ const DRV_USART_PLIB_INTERFACE drvUsart0PlibAPI = {
     .read = (DRV_USART_PLIB_READ)UART1_Read,
     .readIsBusy = (DRV_USART_PLIB_READ_IS_BUSY)UART1_ReadIsBusy,
     .readCountGet = (DRV_USART_PLIB_READ_COUNT_GET)UART1_ReadCountGet,
+	.readAbort = (DRV_USART_PLIB_READ_ABORT)UART1_ReadAbort,
     .writeCallbackRegister = (DRV_USART_PLIB_WRITE_CALLBACK_REG)UART1_WriteCallbackRegister,
     .write = (DRV_USART_PLIB_WRITE)UART1_Write,
     .writeIsBusy = (DRV_USART_PLIB_WRITE_IS_BUSY)UART1_WriteIsBusy,
@@ -242,8 +243,9 @@ void SYS_Initialize ( void* data )
     __builtin_disable_interrupts();
 
   
-    SYS_PMU_MLDO_TRIM();
     CLK_Initialize();
+	SYS_PMU_MLDO_TRIM();
+
     /* Configure Wait States */
     PRECONbits.PFMWS = 5;
 
