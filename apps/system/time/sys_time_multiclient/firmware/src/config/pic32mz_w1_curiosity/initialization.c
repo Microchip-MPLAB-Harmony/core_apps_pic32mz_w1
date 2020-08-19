@@ -195,6 +195,26 @@ const SYS_TIME_INIT sysTimeInitData =
 // *****************************************************************************
 // *****************************************************************************
 
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
+
 
 
 /*******************************************************************************
@@ -212,9 +232,13 @@ void SYS_Initialize ( void* data )
     /* Start out with interrupts disabled before configuring any modules */
     __builtin_disable_interrupts();
 
+    STDIO_BufferModeSet();
+
+
   
-    SYS_PMU_MLDO_TRIM();
     CLK_Initialize();
+	SYS_PMU_MLDO_TRIM();
+
     /* Configure Wait States */
     PRECONbits.PFMWS = 5;
 
