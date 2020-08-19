@@ -60,7 +60,7 @@
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
 #include "driver/memory/drv_memory.h"
-#include "peripheral/spi/plib_spi1.h"
+#include "peripheral/spi/spi_master/plib_spi1_master.h"
 #include "driver/sst26/drv_sst26.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"
