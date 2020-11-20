@@ -1,0 +1,73 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.core_apps_pic32mz_w1_fs_sdspi_fat_pic32mz_w1_curiosity",
+		"version": "3.0.1",
+		"displayName": "FAT filesystem using SD Card Media Example for PIC32MZ W1 Family",
+		"projectName": "sdspi_fat_pic32mz_w1_curiosity",
+		"shortDescription": "This application shows an example of using the MPLAB Harmony File System to access and modify the contents of a SD card using the SDSPI driver and the SPI PLIB",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.40.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.40.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-W_DFP",
+			"semverRange": "^1.2.153"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.5.1"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ1025W104132",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32MZ W1 Curiosity Board"
+			],
+			[
+				"Harmony", "Middleware", "File System (FS)", "SDSPI_FAT"
+			],
+			[
+				"File System (FS)", "SDSPI_FAT"
+			]
+		],
+		"peripherals": [
+			"SDSPI_FAT"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"File System",
+			"PIC32MZ1025W104132",
+			"PIC32MZ W1 Family"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
