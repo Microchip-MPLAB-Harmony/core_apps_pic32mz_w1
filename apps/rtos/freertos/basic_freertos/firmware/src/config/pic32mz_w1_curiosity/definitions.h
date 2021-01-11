@@ -48,6 +48,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "peripheral/uart/plib_uart1.h"
 #include "bsp/bsp.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
@@ -55,9 +56,10 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "osal/osal.h"
-#include "app.h"
-#include "app1.h"
-#include "app2.h"
+#include "task1.h"
+#include "task2.h"
+#include "task3.h"
+#include "task4.h"
 
 
 
@@ -68,6 +70,9 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+/* CPU clock frequency */
+#define CPU_CLOCK_FREQUENCY 200000000
 
 // *****************************************************************************
 // *****************************************************************************

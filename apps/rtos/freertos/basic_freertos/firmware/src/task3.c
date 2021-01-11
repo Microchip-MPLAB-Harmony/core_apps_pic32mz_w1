@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app.c
+    task3.c
 
   Summary:
     This file contains the source code for the MPLAB Harmony application.
@@ -21,40 +21,16 @@
     files.
  *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
-/*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
-*
-* Subject to your compliance with these terms, you may use Microchip software
-* and any derivatives exclusively with Microchip products. It is your
-* responsibility to comply with third party license terms applicable to your
-* use of third party software (including open source software) that may
-* accompany Microchip software.
-*
-* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-* PARTICULAR PURPOSE.
-*
-* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************/
-// DOM-IGNORE-END
-
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-#include "app.h"
-
+#include "task3.h"
+#include "definitions.h"
+#include "portmacro.h"
+#include <string.h>
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -71,25 +47,34 @@
     This structure holds the application's data.
 
   Remarks:
-    This structure should be initialized by the APP_Initialize function.
+    This structure should be initialized by the TASK3_Initialize function.
 
     Application strings and buffers are be defined outside this structure.
 */
 
-APP_DATA appData;
-
-/* The queue used by both tasks. */
-QueueHandle_t xQueue;
-
+TASK3_DATA task3Data;
+static SemaphoreHandle_t dataRxSemaphore;
+extern SemaphoreHandle_t uartMutexLock;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
 // *****************************************************************************
 // *****************************************************************************
+void uartReadEventHandler(UART_EVENT event, uintptr_t context )
+{
+    if (event == UART_EVENT_READ_THRESHOLD_REACHED)
+    {
+        BaseType_t xHigherPriorityTaskWoken;
 
-/* TODO:  Add any necessary callback functions.
-*/
+        /* Unblock the task by releasing the semaphore. */
+        xSemaphoreGiveFromISR( dataRxSemaphore, &xHigherPriorityTaskWoken );
 
+        /* If xHigherPriorityTaskWoken was set to true you
+        we should yield */
+
+        portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
+    }
+}
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -109,22 +94,16 @@ QueueHandle_t xQueue;
 
 /*******************************************************************************
   Function:
-    void APP_Initialize ( void )
+    void TASK3_Initialize ( void )
 
   Remarks:
-    See prototype in app.h.
+    See prototype in task3.h.
  */
 
-void APP_Initialize ( void )
+void TASK3_Initialize ( void )
 {
-    /* Create the queue. */
-    xQueue = xQueueCreate( QUEUE_LENGTH, sizeof( unsigned long ) );
-
-    appData.ulValueToSend1 = 100UL;
-    appData.ulValueToSend2 = 1000UL;
-
     /* Place the App state machine in its initial state. */
-    appData.state = APP_STATE_INIT;
+    task3Data.state = TASK3_STATE_INIT;
 
 
 
@@ -136,35 +115,58 @@ void APP_Initialize ( void )
 
 /******************************************************************************
   Function:
-    void APP_Tasks ( void )
+    void TASK3_Tasks ( void )
 
   Remarks:
-    See prototype in app.h.
+    See prototype in task3.h.
  */
 
-void APP_Tasks ( void )
+void TASK3_Tasks ( void )
 {
+    uint8_t readByte;
+    bool status = false;
+    TickType_t timeNow;
 
-   /* Send to the queue - causing the queue receive APP2_Tasks to unblock and
-    * toggle the LED.  0 is used as the block time so the sending operation
-    * will not block - it shouldn't need to block as the queue should always
-    * be empty at this point in the code.
-    */
-    xQueueSend( xQueue, &appData.ulValueToSend1, 0U );
+    UART1_ReadCallbackRegister(uartReadEventHandler, 0);
+    UART1_ReadThresholdSet(1);
+    UART1_ReadNotificationEnable(true, false);
 
-   /* Send to the queue - causing the queue receive APP1_Tasks to unblock and
-    * toggle the LED.  0 is used as the block time so the sending operation
-    * will not block - it shouldn't need to block as the queue should always
-    * be empty at this point in the code.
-    */
-    xQueueSend( xQueue, &appData.ulValueToSend2, 0U );
+    dataRxSemaphore = xSemaphoreCreateBinary();
 
-   /* Place this task in the blocked state until it is time to run again.
-    * The block time is specified in ticks, the constant used converts ticks
-    * to ms.  While in the Blocked state this task will not consume any CPU
-    * time.
-    */
-    vTaskDelay(QUEUE_SEND_FREQUENCY_MS );
+    if (dataRxSemaphore != NULL)
+    {
+        status = true;
+    }
+
+    while (status == true)
+    {
+        /* Block until a character is received on the terminal */
+        if( xSemaphoreTake( dataRxSemaphore, portMAX_DELAY ) == pdTRUE )
+        {
+            /* Task3 is running (<-) now */
+            xSemaphoreTake(uartMutexLock, portMAX_DELAY);
+            UART1_Write((uint8_t*)"                      Tsk3-P3 <-\r\n", 34);
+            xSemaphoreGive(uartMutexLock);
+
+            /* Toggle an LED if character received is 'L' or 'l' */
+            while (UART1_Read(&readByte, 1) == true)
+            {
+                if (readByte == 'L' || readByte == 'l')
+                {
+                    LED_RED_Toggle();
+                }
+            }
+
+            /* Work done by task3 for 50 ticks */
+            timeNow = xTaskGetTickCount();
+            while ((xTaskGetTickCount() - timeNow) < 50);
+
+            /* Task3 is exiting (->) now */
+            xSemaphoreTake(uartMutexLock, portMAX_DELAY);
+            UART1_Write((uint8_t*)"                      Tsk3-P3 ->\r\n", 34);
+            xSemaphoreGive(uartMutexLock);
+        }
+    }
 }
 
 

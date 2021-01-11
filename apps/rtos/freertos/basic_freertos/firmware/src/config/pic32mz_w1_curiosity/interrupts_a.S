@@ -52,4 +52,76 @@
 #include <xc.h>
 #include "ISR_Support.h"
 
+    .extern  UART1_FAULT_Handler
+
+    .section   .vector_38,code, keep
+    .equ     __vector_dispatch_38, IntVectorUART1_FAULT_Handler
+    .global  __vector_dispatch_38
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorUART1_FAULT_Handler
+
+IntVectorUART1_FAULT_Handler:
+    portSAVE_CONTEXT
+    la    s6,  UART1_FAULT_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorUART1_FAULT_Handler
+    .extern  UART1_RX_Handler
+
+    .section   .vector_39,code, keep
+    .equ     __vector_dispatch_39, IntVectorUART1_RX_Handler
+    .global  __vector_dispatch_39
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorUART1_RX_Handler
+
+IntVectorUART1_RX_Handler:
+    portSAVE_CONTEXT
+    la    s6,  UART1_RX_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorUART1_RX_Handler
+    .extern  UART1_TX_Handler
+
+    .section   .vector_40,code, keep
+    .equ     __vector_dispatch_40, IntVectorUART1_TX_Handler
+    .global  __vector_dispatch_40
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorUART1_TX_Handler
+
+IntVectorUART1_TX_Handler:
+    portSAVE_CONTEXT
+    la    s6,  UART1_TX_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorUART1_TX_Handler
+    .extern  CHANGE_NOTICE_A_Handler
+
+    .section   .vector_44,code, keep
+    .equ     __vector_dispatch_44, IntVectorCHANGE_NOTICE_A_Handler
+    .global  __vector_dispatch_44
+    .set     nomicromips
+    .set     noreorder
+    .set     nomips16
+    .set     noat
+    .ent  IntVectorCHANGE_NOTICE_A_Handler
+
+IntVectorCHANGE_NOTICE_A_Handler:
+    portSAVE_CONTEXT
+    la    s6,  CHANGE_NOTICE_A_Handler
+    jalr  s6
+    nop
+    portRESTORE_CONTEXT
+    .end   IntVectorCHANGE_NOTICE_A_Handler
 

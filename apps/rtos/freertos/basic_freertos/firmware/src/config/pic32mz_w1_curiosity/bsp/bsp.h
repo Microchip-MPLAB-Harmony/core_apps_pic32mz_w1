@@ -70,10 +70,6 @@
 #define LED_GREEN_Get() ((PORTK >> 3) & 0x1)
 #define LED_GREEN_On() (LATKSET = (1<<3))
 #define LED_GREEN_Off() (LATKCLR = (1<<3))
-/*** SWITCH Macros for SWITCH1 ***/
-#define SWITCH1_Get() ((PORTA >> 10) & 0x1)
-#define SWITCH1_STATE_PRESSED 0
-#define SWITCH1_STATE_RELEASED 1
 
 
 
