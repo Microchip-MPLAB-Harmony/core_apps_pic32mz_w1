@@ -153,13 +153,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: EA5CC39928E894397FF65B77E8A35944
-- generatedChecksum: 540F4044DED2EA404009D1D605B8BBEC
+- generatedChecksum: 3772E0AE043009717356C57849263E2C
   logicalPath: config\pic32mz_w1_curiosity\system\fs
   name: sys_fs_littlefs_interface.c
   physicalPath: system\fs\src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 540F4044DED2EA404009D1D605B8BBEC
+  userChecksum: 3772E0AE043009717356C57849263E2C
 - generatedChecksum: 8CE95E23FB02A25F75AF45CC17618FAC
   logicalPath: config\pic32mz_w1_curiosity\system\fs
   name: sys_fs_media_manager.c
@@ -293,13 +293,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: E6484EE005BCE03DE8757709116B6D12
-- generatedChecksum: 45C8D99AA1F7B33E7AD162F49A3B0EC5
+- generatedChecksum: BF2A696BE4BCB3BA4E2F732C79B77460
   logicalPath: config\pic32mz_w1_curiosity\system\fs\littlefs
   name: lfs_bdio.h
   physicalPath: system\fs\littlefs
   security: NON_SECURE
   type: HEADER
-  userChecksum: 45C8D99AA1F7B33E7AD162F49A3B0EC5
+  userChecksum: BF2A696BE4BCB3BA4E2F732C79B77460
 - generatedChecksum: D7B445C9A51ED5FE804AC2CA8BF39431
   logicalPath: config\pic32mz_w1_curiosity\system\fs\littlefs
   name: lfs_util.h
@@ -384,20 +384,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6972608768DDBE6E37A2D81B83DF490B
-- generatedChecksum: 03FB7A7376E90ED973A55C2064718C4F
+- generatedChecksum: CD18C42DA664E119272221C6A9A767DE
   logicalPath: config\pic32mz_w1_curiosity\system\fs
   name: sys_fs.h
   physicalPath: system\fs
   security: NON_SECURE
   type: HEADER
-  userChecksum: 03FB7A7376E90ED973A55C2064718C4F
-- generatedChecksum: 258249CDB72E6D56EC0026360D325A91
+  userChecksum: CD18C42DA664E119272221C6A9A767DE
+- generatedChecksum: 5CEC04AB282C601B92ED6969765C4802
   logicalPath: config\pic32mz_w1_curiosity\system\fs
   name: sys_fs_littlefs_interface.h
   physicalPath: system\fs
   security: NON_SECURE
   type: HEADER
-  userChecksum: 258249CDB72E6D56EC0026360D325A91
+  userChecksum: 5CEC04AB282C601B92ED6969765C4802
 - generatedChecksum: 0D162D1868A187FDC092657020E668D8
   logicalPath: config\pic32mz_w1_curiosity\system\fs
   name: sys_fs_local.h
@@ -514,7 +514,7 @@ settings:
   delimiter: ''
   key: heap-size
   security: NON_SECURE
-  value: '3072'
+  value: '2048'
 - append: false
   category: C32-LD
   delimiter: ''

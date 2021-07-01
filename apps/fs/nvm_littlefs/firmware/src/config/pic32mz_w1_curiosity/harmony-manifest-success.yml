@@ -4,13 +4,13 @@
 
 
 project: nvm_littlefs
-creation_date: 2021-06-02T10:31:40.895+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2021-07-01T10:22:51.455+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: IDE            # [IDE|Standalone|Headless]
 mhc_version: v3.7.1
-mplabx_version: v5.40        # if MPLAB X plugin only
+mplabx_version: v5.50        # if MPLAB X plugin only
 plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (2.50)
+compiler: XC32 (3.00)
 
 modules:
     - {name: "core", version: "unknown"}

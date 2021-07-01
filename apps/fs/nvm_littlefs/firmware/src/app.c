@@ -87,18 +87,17 @@
 #define APP_DEVICE_NAME         "/dev/nvma1"
 #define APP_FS_TYPE             LITTLEFS
 
-#define APP_FILE_NAME           "dir1/tf3.txt"
-//#define APP_FILE_NAME           "tf1.txt"
+#define APP_FILE_NAME           "FILE.TXT"
 
-#define WRITE_DATA_SIZE         9
-#define ORIG_DATA_SIZE          6
+#define WRITE_DATA_SIZE         13
+#define ORIG_DATA_SIZE          4
 
 /* This is the string that will written to the file */
-const uint8_t writeData[WRITE_DATA_SIZE] = "Microchip";
+const uint8_t writeData[WRITE_DATA_SIZE] = "Hello World";
 
 /* This string contains the original value of FILE.txt (before being written by
  * the demo */
-const uint8_t originalData[ORIG_DATA_SIZE] = "hello3";
+const uint8_t originalData[ORIG_DATA_SIZE] = "Data";
 
 // *****************************************************************************
 /* Application Data
