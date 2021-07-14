@@ -48,6 +48,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "peripheral/uart/plib_uart1.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_littlefs_interface.h"
@@ -57,6 +58,8 @@
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
 #include "driver/memory/drv_memory.h"
+#include "system/console/sys_console.h"
+#include "system/console/src/sys_console_uart_definitions.h"
 #include "peripheral/spi/spi_master/plib_spi1_master.h"
 #include "driver/sst26/drv_sst26.h"
 #include "system/int/sys_int.h"
@@ -190,6 +193,8 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  drvMemory0;
+    SYS_MODULE_OBJ  sysConsole0;
+
     SYS_MODULE_OBJ  drvSST26;
 
 } SYSTEM_OBJECTS;

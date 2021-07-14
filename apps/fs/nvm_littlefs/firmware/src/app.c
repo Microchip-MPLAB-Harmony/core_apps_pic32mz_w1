@@ -54,6 +54,7 @@
 
 #include <string.h>
 #include "app.h"
+#include "definitions.h"
 
 /* This application showcases the File operations with NVM as the media. To
  * begin with the file system image contains a file called "FILE.TXT" with
@@ -191,6 +192,7 @@ void APP_Tasks ( void )
             else
             {
                 /* Mount was successful. Open a file. */
+                SYS_CONSOLE_PRINT("[%s] Mount success\r\n", __func__);
                 appData.state = APP_OPEN_FILE;
             }
             break;
@@ -202,6 +204,7 @@ void APP_Tasks ( void )
             if(appData.fileHandle == SYS_FS_HANDLE_INVALID)
             {
                 /* Failed to open the file. */
+                SYS_CONSOLE_PRINT("[%s] FileOpen fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -217,6 +220,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileStat(APP_MOUNT_NAME"/"APP_FILE_NAME, &appData.fileStatus) == SYS_FS_RES_FAILURE)
             {
                 /* Failed to read the file stat. */
+                SYS_CONSOLE_PRINT("[%s] FileStat fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -233,6 +237,7 @@ void APP_Tasks ( void )
             if(appData.fileSize == -1)
             {
                 /* Failed to read the file size. */
+                SYS_CONSOLE_PRINT("[%s] FileSize fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -254,6 +259,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileSeek(appData.fileHandle, appData.fileSize, SYS_FS_SEEK_SET) == -1)
             {
                 /* File seek caused an error */
+                SYS_CONSOLE_PRINT("[%s] FileSeek fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -269,6 +275,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileEOF(appData.fileHandle) == false )
             {
                 /* Either, EOF is not reached or there was an error. */
+                SYS_CONSOLE_PRINT("[%s] FileEOF fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -284,6 +291,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileSeek(appData.fileHandle, 0, SYS_FS_SEEK_SET) == -1)
             {
                 /* File seek caused an error */
+                SYS_CONSOLE_PRINT("[%s] FileSeek fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -300,6 +308,7 @@ void APP_Tasks ( void )
             {
                 /* There was an error while reading the file. Close the
                  * file and error out. */
+                SYS_CONSOLE_PRINT("[%s] FileRead fail\r\n", __func__);
                 SYS_FS_FileClose(appData.fileHandle);
                 appData.state = APP_ERROR;
             }
@@ -308,6 +317,7 @@ void APP_Tasks ( void )
                 if(memcmp(appData.data, originalData, ORIG_DATA_SIZE) != 0)
                 {
                     /* The written and the read data don't match. */
+                    SYS_CONSOLE_PRINT("[%s] FileRead fail\r\n", __func__);
                     appData.state = APP_ERROR;
                 }
                 else
@@ -326,6 +336,7 @@ void APP_Tasks ( void )
             if (SYS_FS_FileSeek(appData.fileHandle, ORIG_DATA_SIZE, SYS_FS_SEEK_SET) == -1)
             {
                 /* File seek caused an error */
+                SYS_CONSOLE_PRINT("[%s] FileSeek fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -342,6 +353,7 @@ void APP_Tasks ( void )
             {
                 /* Write was not successful. Close the file and error
                  * out. */
+                SYS_CONSOLE_PRINT("[%s] FileWrite fail\r\n", __func__);
                 SYS_FS_FileClose(appData.fileHandle);
                 appData.state = APP_ERROR;
             }
@@ -360,6 +372,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileSeek(appData.fileHandle, -WRITE_DATA_SIZE, SYS_FS_SEEK_END) == -1)
             {
                 /* Could not seek the file. Error out*/
+                SYS_CONSOLE_PRINT("[%s] FileSeek fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -376,7 +389,7 @@ void APP_Tasks ( void )
             {
                 /* There was an error while reading the file.
                  * Close the file and error out. */
-
+                SYS_CONSOLE_PRINT("[%s] FileRead fail\r\n", __func__);
                 SYS_FS_FileClose(appData.fileHandle);
                 appData.state = APP_ERROR;
             }
@@ -385,11 +398,13 @@ void APP_Tasks ( void )
                 if(strcmp((const char *)appData.data, (const char *)writeData) != 0)
                 {
                     /* The written and the read data don't match. */
+                    SYS_CONSOLE_PRINT("[%s] FileRead fail\r\n", __func__);
                     appData.state = APP_ERROR;
                 }
                 else
                 {
                     /* The test was successful. Lets idle. */
+                    SYS_CONSOLE_PRINT("[%s] Test success\r\n", __func__);
                     appData.state = APP_IDLE;
                 }
 

@@ -49,6 +49,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include "driver/memory/drv_memory_nvm.h"
+#include "peripheral/uart/plib_uart1.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_littlefs_interface.h"
@@ -58,6 +59,8 @@
 #include "peripheral/cache/plib_cache.h"
 #include "peripheral/evic/plib_evic.h"
 #include "driver/memory/drv_memory.h"
+#include "system/console/sys_console.h"
+#include "system/console/src/sys_console_uart_definitions.h"
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "osal/osal.h"
@@ -189,6 +192,8 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  drvMemory0;
+    SYS_MODULE_OBJ  sysConsole0;
+
 
 } SYSTEM_OBJECTS;
 

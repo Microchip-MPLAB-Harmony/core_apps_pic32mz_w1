@@ -53,6 +53,7 @@
 // *****************************************************************************
 
 #include "app.h"
+#include "definitions.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -156,14 +157,14 @@ void APP_Tasks ( void )
                 /* The disk could not be mounted. Try mounting again until
                  * the operation succeeds. */
                 appData.state = APP_MOUNT_DISK;
+
             }
             else
             {
                 /* Mount was successful. Format the disk. */
-                //appData.state = APP_FORMAT_DISK;
-               appData.state = APP_FORMAT_DISK;
+                SYS_CONSOLE_PRINT("[%s] Mount success\r\n", __func__);
+                appData.state = APP_FORMAT_DISK;
             }
-            //appData.state = APP_ERROR;
             break;
         }
 
@@ -175,11 +176,13 @@ void APP_Tasks ( void )
             if (SYS_FS_DriveFormat (APP_MOUNT_NAME, &opt, (void *)work, SYS_FS_LFS_MAX_SS) != SYS_FS_RES_SUCCESS)
             {
                 /* Format of the disk failed. */
+                SYS_CONSOLE_PRINT("[%s] Format fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
             {
                 /* Format succeeded. Open a file. */
+                SYS_CONSOLE_PRINT("[%s] Format success\r\n", __func__);
                 appData.state = APP_OPEN_FILE;
             }
             break;
@@ -187,10 +190,12 @@ void APP_Tasks ( void )
 
         case APP_OPEN_FILE:
         {
+            SYS_CONSOLE_PRINT("[%s] Start Testing\r\n", __func__);
             appData.fileHandle = SYS_FS_FileOpen(APP_MOUNT_NAME"/"APP_FILE_NAME, (SYS_FS_FILE_OPEN_WRITE_PLUS));
             if(appData.fileHandle == SYS_FS_HANDLE_INVALID)
             {
                 /* File open unsuccessful */
+                SYS_CONSOLE_PRINT("[%s] FileOpen fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -206,6 +211,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileWrite (appData.fileHandle, (void *)appData.writeBuffer, BUFFER_SIZE) == -1)
             {
                 /* Failed to write to the file. */
+                SYS_CONSOLE_PRINT("[%s] FileWrite fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -221,6 +227,7 @@ void APP_Tasks ( void )
             if (SYS_FS_FileSync(appData.fileHandle) != 0)
             {
                 /* Could not flush the contents of the file. Error out. */
+                SYS_CONSOLE_PRINT("[%s] FileSync fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -236,6 +243,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileStat(APP_MOUNT_NAME"/"APP_FILE_NAME, &appData.fileStatus) == SYS_FS_RES_FAILURE)
             {
                 /* Reading file status was a failure */
+                SYS_CONSOLE_PRINT("[%s] FileStat fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -252,6 +260,7 @@ void APP_Tasks ( void )
             if(appData.fileSize == -1)
             {
                 /* Reading file size was a failure */
+                SYS_CONSOLE_PRINT("[%s] FileSize fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -262,6 +271,7 @@ void APP_Tasks ( void )
                 }
                 else
                 {
+                    SYS_CONSOLE_PRINT("[%s] FileSize fail\r\n", __func__);
                     appData.state = APP_ERROR;
                 }
             }
@@ -273,6 +283,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileSeek( appData.fileHandle, appData.fileSize, SYS_FS_SEEK_SET ) == -1)
             {
                 /* File seek caused an error */
+                SYS_CONSOLE_PRINT("[%s] FileSeek fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -289,6 +300,7 @@ void APP_Tasks ( void )
             {
                 /* Either, EOF is not reached or there was an error
                    In any case, for the application, its an error condition */
+                SYS_CONSOLE_PRINT("[%s] FileEOF fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -304,6 +316,7 @@ void APP_Tasks ( void )
             if(SYS_FS_FileSeek( appData.fileHandle, 0, SYS_FS_SEEK_SET ) == -1)
             {
                 /* File seek caused an error */
+                SYS_CONSOLE_PRINT("[%s] FileSeek fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -321,6 +334,7 @@ void APP_Tasks ( void )
                 
                 /* There was an error while reading the file. Close the file
                  * and error out. */
+                SYS_CONSOLE_PRINT("[%s] FileRead fail\r\n", __func__);
                 SYS_FS_FileClose(appData.fileHandle);
                 appData.state = APP_ERROR;
             }
@@ -329,6 +343,7 @@ void APP_Tasks ( void )
                 if ((appData.fileSize != BUFFER_SIZE) || (memcmp(appData.readBuffer, appData.writeBuffer, BUFFER_SIZE) != 0))
                 {
                     /* The written and the read data dont match. */
+                    SYS_CONSOLE_PRINT("[%s] FileRead fail\r\n", __func__);
                     appData.state = APP_ERROR;
                 }
                 else
@@ -345,6 +360,7 @@ void APP_Tasks ( void )
             /* Close the file */
             if (SYS_FS_FileClose(appData.fileHandle) != 0)
             {
+                SYS_CONSOLE_PRINT("[%s] FileClose fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
@@ -359,10 +375,12 @@ void APP_Tasks ( void )
             /* Unmount the disk */
             if (SYS_FS_Unmount(APP_MOUNT_NAME) != 0)
             {
+                SYS_CONSOLE_PRINT("[%s] Unmount fail\r\n", __func__);
                 appData.state = APP_ERROR;
             }
             else
             {
+                SYS_CONSOLE_PRINT("[%s] Test success\r\n", __func__);
                 appData.state = APP_IDLE;
             }
             break;

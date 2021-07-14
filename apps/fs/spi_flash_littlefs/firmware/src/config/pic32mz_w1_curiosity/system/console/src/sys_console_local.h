@@ -1,22 +1,22 @@
 /*******************************************************************************
-  UART1 PLIB
+  Console System Service Local Data Structures
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    plib_uart1.h
+    sys_console_local.h
 
   Summary:
-    UART1 PLIB Header File
+    Console System Service local declarations and definitions.
 
   Description:
-    None
-
+    This file contains the Console System Service local declarations and definitions.
 *******************************************************************************/
 
+//DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -37,78 +37,47 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
+//DOM-IGNORE-END
 
-#ifndef PLIB_UART1_H
-#define PLIB_UART1_H
 
-#include <stddef.h>
-#include <stdbool.h>
+#ifndef SYS_CONSOLE_LOCAL_H
+#define SYS_CONSOLE_LOCAL_H
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: File includes
+// *****************************************************************************
+// *****************************************************************************
+
 #include <stdint.h>
-#include "device.h"
-#include "plib_uart_common.h"
+#include <stdbool.h>
+#include <stddef.h>
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
-    extern "C" {
+extern "C" {
 
 #endif
 // DOM-IGNORE-END
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface
+// Section: Data Type Definitions
 // *****************************************************************************
 // *****************************************************************************
 
-#define UART1_FrequencyGet()    (uint32_t)(100000000UL)
+typedef uintptr_t CONSOLE_DEVICE_INDEX;
 
-/****************************** UART1 API *********************************/
-
-void UART1_Initialize( void );
-
-bool UART1_SerialSetup( UART_SERIAL_SETUP *setup, uint32_t srcClkFreq );
-
-UART_ERROR UART1_ErrorGet( void );
-
-bool UART1_AutoBaudQuery( void );
-
-void UART1_AutoBaudSet( bool enable );
-
-size_t UART1_Write(uint8_t* pWrBuffer, const size_t size );
-
-size_t UART1_WriteCountGet(void);
-
-size_t UART1_WriteFreeBufferCountGet(void);
-
-size_t UART1_WriteBufferSizeGet(void);
-
-bool UART1_WriteNotificationEnable(bool isEnabled, bool isPersistent);
-
-void UART1_WriteThresholdSet(uint32_t nBytesThreshold);
-
-void UART1_WriteCallbackRegister( UART_RING_BUFFER_CALLBACK callback, uintptr_t context);
-
-size_t UART1_Read(uint8_t* pRdBuffer, const size_t size);
-
-size_t UART1_ReadCountGet(void);
-
-size_t UART1_ReadFreeBufferCountGet(void);
-
-size_t UART1_ReadBufferSizeGet(void);
-
-bool UART1_ReadNotificationEnable(bool isEnabled, bool isPersistent);
-
-void UART1_ReadThresholdSet(uint32_t nBytesThreshold);
-
-void UART1_ReadCallbackRegister( UART_RING_BUFFER_CALLBACK callback, uintptr_t context);
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
+}
 #endif
-// DOM-IGNORE-END
+//DOM-IGNORE-END
 
-#endif // PLIB_UART1_H
+#endif //#ifndef SYS_CONSOLE_LOCAL_H
+
+/*******************************************************************************
+ End of File
+*/

@@ -63,6 +63,9 @@
 
 void SPI1_RX_InterruptHandler( void );
 void SPI1_TX_InterruptHandler( void );
+void UART1_FAULT_InterruptHandler( void );
+void UART1_RX_InterruptHandler( void );
+void UART1_TX_InterruptHandler( void );
 
 
 
@@ -75,6 +78,21 @@ void __ISR(_SPI1_RX_VECTOR, ipl1SRS) SPI1_RX_Handler (void)
 void __ISR(_SPI1_TX_VECTOR, ipl1SRS) SPI1_TX_Handler (void)
 {
     SPI1_TX_InterruptHandler();
+}
+
+void __ISR(_UART1_FAULT_VECTOR, ipl1SRS) UART1_FAULT_Handler (void)
+{
+    UART1_FAULT_InterruptHandler();
+}
+
+void __ISR(_UART1_RX_VECTOR, ipl1SRS) UART1_RX_Handler (void)
+{
+    UART1_RX_InterruptHandler();
+}
+
+void __ISR(_UART1_TX_VECTOR, ipl1SRS) UART1_TX_Handler (void)
+{
+    UART1_TX_InterruptHandler();
 }
 
 
