@@ -48,13 +48,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
-- generatedChecksum: 2ED4AE473376608E7E7D151A1D5FDF0B
+- generatedChecksum: 6AB6191F2556C924E5B9B27EA6CECF59
   logicalPath: config/pic32mz_w1_curiosity
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2ED4AE473376608E7E7D151A1D5FDF0B
+  userChecksum: 6AB6191F2556C924E5B9B27EA6CECF59
 - generatedChecksum: 84A1EEA53FC5216B91EA7FABEAB431FA
   logicalPath: config/pic32mz_w1_curiosity
   name: interrupts.c
@@ -111,13 +111,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DA10C8889278A796D0EE4C6096B57C3
-- generatedChecksum: A2BF2F67327C0C6F02CC7F2499F05595
+- generatedChecksum: B19B292DD0D4A6475C6BBEFD37531177
   logicalPath: config/pic32mz_w1_curiosity/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: A2BF2F67327C0C6F02CC7F2499F05595
+  userChecksum: B19B292DD0D4A6475C6BBEFD37531177
 - generatedChecksum: D1E3BBAFAE83571C644CD56C2747168C
   logicalPath: config/pic32mz_w1_curiosity/peripheral/evic
   name: plib_evic.c
