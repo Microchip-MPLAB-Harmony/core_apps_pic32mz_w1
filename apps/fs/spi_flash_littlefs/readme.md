@@ -26,10 +26,10 @@ This application shows an example of using the LittleFS File System to access SS
 
 ## Downloading and building the application
 
-To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mz_w1) and then click Clone button to clone this repository or download as zip file.
+To clone or download this application from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/core_apps_pic32mz_w1) and then click Code button to clone this repository or download as zip file.
 This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
 
-Path of the application within the repository is **apps/fs/spi_flash_fat/firmware** .
+Path of the application within the repository is **apps/fs/spi_flash_littlefs/firmware** .
 
 To build the application, refer to the following table and open the project using its IDE.
 
@@ -60,5 +60,5 @@ Refer to the following table for LED name:
 
 | Board | LED Name |
 | ----- | -------- |
-| PIC32MZ W1 Curiosity Board | RED LED |
+| PIC32MZ W1 Curiosity Board | RED LED (D202) |
 |||
