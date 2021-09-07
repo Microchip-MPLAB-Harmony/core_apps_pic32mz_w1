@@ -55,6 +55,7 @@
 			"MHC",
 			"Harmony",
 			"File System",
+			"littlefs",
 			"PIC32MZ1025W104132",
 			"PIC32MZ W1 Family"
 		],
