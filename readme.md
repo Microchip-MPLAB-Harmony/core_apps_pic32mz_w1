@@ -44,8 +44,10 @@ The following applications are provided to demonstrate the typical or interestin
 | [USART driver asynchronous - USART echo](apps/driver/usart/async/usart_echo/readme.md) | This example echoes the received characters over the console using the USART driver in asynchronous mode |
 | [USART driver synchronous - USART echo](apps/driver/usart/sync/usart_echo/readme.md) | This example echoes the received characters over the console using the USART driver in synchronous mode |
 | [FAT filesystem using NVM Media](apps/fs/nvm_fat/readme.md) | This application shows an example of implementing a FAT disk in the device internal Flash memory |
+| [LittleFS filesystem using NVM Media](apps/fs/nvm_littlefs/readme.md) | This application shows an example of implementing a LittleFS  disk in the device internal Flash memory |
 | [FAT filesystem using SD Card Media](apps/fs/sdspi_fat/readme.md) | This application shows an example of using the MPLAB Harmony File System to access and modify the contents of a SD card using the SDSPI driver and the SPI PLIB |
 | [FAT filesystem using SST26 Media](apps/fs/spi_flash_fat/readme.md) | This application shows an example of using the FAT File System to access SST26 flash media using SPI protocol |
+| [LittleFS filesystem using SST26 Media](apps/fs/spi_flash_littlefs/readme.md) | This application shows an example of using the LittleFS File System to access SST26 flash media using SPI protocol |
 | [FreeRTOS basic](apps/rtos/freertos/basic_freertos/readme.md) | This example application demonstrates context switching between four tasks of different priorites. Two tasks run periodically while the other two tasks are event driven |
 | [Console Debug System Service using UART](apps/system/console_debug/sys_console_debug_uart_read_write/readme.md) | This example application demonstrates the UART based console and debug system service |
 | [Console Debug System Service using USB](apps/system/console_debug/sys_console_debug_usb_read_write/readme.md) | This example application demonstrates the USB based console and debug system service |
