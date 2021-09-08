@@ -139,7 +139,7 @@
 
 
 /*** FCPN0 ***/
-#pragma config CP =    DISABLED
+#pragma config CP =    OFF
 
 
 
