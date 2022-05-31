@@ -1,4 +1,4 @@
-<config configName="pic32mz_w1_curiosity" projectName="sdspi_fat_pic32mz_w1_curiosity" configVersion="1.1" device="PIC32MZ1025W104132" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.2.4">
+<config configName="pic32mz_w1_curiosity" projectName="sdspi_fat_pic32mz_w1_curiosity" configVersion="1.1" device="PIC32MZ1025W104132" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.4">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -43,7 +43,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -633,7 +633,7 @@
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_PIC32MZ_W1_Curiosity&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;560&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;239&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;122&quot; y=&quot;336&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;drv_sdspi&quot; x=&quot;315&quot; y=&quot;81&quot;/&gt;
@@ -2583,7 +2583,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SPLLCON_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4276293&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4808805&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3500,11 +3500,11 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\configuration.h</file>
-         <hash>e2aa5e3a14e2b9753ae086964e85c1532ae1fdcfdbb75ba18d246fa36eaec26b</hash>
+         <hash>a001f5d3a0b0fc8e4a11786bdfb819579d70ac505a9d781a509eb22d0d0030f8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\fat_fs\file_system\ff.c</file>
-         <hash>89210dcb75cae2c2c9cf5e835ccd0b5a8dd5860ac9f79661207076b9a4d709e0</hash>
+         <hash>ef75bad24073ec54d3e76b06b26c56b604bb4f063fe6bd9ebe7c80bae94fd6d5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\cache\sys_cache.c</file>
@@ -3512,7 +3512,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\fat_fs\file_system\ff.h</file>
-         <hash>910fa58ceb264c7e03edce224b6484fc2fba3c8d6656975e3c01cd45cdc5d4b3</hash>
+         <hash>d7b45a8f01fcd9923e18f8618408613021f2d36f35c632de31edaf5f4acf6c6b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\sdspi\src\drv_sdspi_plib_interface.h</file>
@@ -3532,11 +3532,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\sys_fs.h</file>
-         <hash>46a5946f727b22530f0e0945a33cad93077c7b92c1bb2811959709ba7be60e9c</hash>
+         <hash>c3bce19e69290a393dca6f7ddbdb103ed7cf21be40f492fdfea185eb85ecbb93</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\src\sys_fs.c</file>
-         <hash>43ef58e17742383c1af49126937f4f24585eb0d5a2c60e1a94fb05611974d8b7</hash>
+         <hash>ca021c42833ef8d927a2165d42b8cf0d14ba0739eae48591dbd65b03f6166993</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\time\sys_time_definitions.h</file>
@@ -3552,7 +3552,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\gpio\plib_gpio.h</file>
-         <hash>b2089c7e1428bc4847c739b14c2a8fa889df1a6a67f61393bb740d9f57fd091d</hash>
+         <hash>6ded05eb94a24cad7e257f3d4f9cc85dc2d082dcd4e62f0825f0f9e14de05f76</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\system_common.h</file>
@@ -3572,7 +3572,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\gpio\plib_gpio.c</file>
-         <hash>a8e21138120b8b2fd4f3301fe720277a0b613a78c8c3fd810df405f9a22153ef</hash>
+         <hash>f576e5c973f53ab4b37c325567202bb2dfda7d18ed0ca3fe338607e78c323e62</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\bsp\bsp.c</file>
@@ -3608,7 +3608,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\bsp\bsp.h</file>
-         <hash>caa166227c93525b171aadbb25b4be5c481efdb254df6f7df1672332a274933d</hash>
+         <hash>42339c30dd1a689dfc8e2213fd7551e3acbde1b6945dc69f87349a7a943e0752</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\fat_fs\file_system\ffunicode.c</file>
@@ -3648,7 +3648,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\p32MZ1025W104132.ld</file>
-         <hash>09308de5dfe3ea5211cdd3fc02ea993b7ff098103c055f4643813ffa409c3736</hash>
+         <hash>faa9c359cf4e7de76330fc14ead3392b11c9019b93afdc81801c1f48cc737b50</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\osal\osal_impl_basic.h</file>
@@ -3660,7 +3660,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\initialization.c</file>
-         <hash>369d39d3c127a7cea89b94c44ea1a1a85cc62fc283a7cfed25de60046c3bdd5e</hash>
+         <hash>14aa2d373f208a1d6836da3e490cb0597c8d9d1301dc866307f3fdc82aec65b5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\tasks.c</file>
@@ -3692,7 +3692,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\fat_fs\file_system\ffconf.h</file>
-         <hash>3f5b2377956be1566d15d64a6365d957f7dc6ebb4d063682d0a5cf113aa0398d</hash>
+         <hash>521bedf26958bf5ab948de4d825953fd95dbec6c65ab0a3f5b6ddf34f0ff6c19</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\evic\plib_evic.h</file>
@@ -3704,7 +3704,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\definitions.h</file>
-         <hash>3015efff6e37ef5a1d5cdb6755af5db9c501eea3b8d961a55defec0d9f31124d</hash>
+         <hash>04ced4e804657dd0619d7832d08615d897541c96335f8f1809db25565dd7ebec</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\src\sys_fs_media_manager_local.h</file>
@@ -3712,7 +3712,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\evic\plib_evic.c</file>
-         <hash>3ee5502523746b258e06019442519d1d5d4cf1770c2214d7eaca24e1da8c6e9f</hash>
+         <hash>3377fb7380a1877c1a795f77adb9e2f780d629d27c75f6b78cfbce2b17cf72f0</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\int\sys_int_mapping.h</file>
@@ -3736,7 +3736,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\time\src\sys_time_local.h</file>
-         <hash>a761ad68ce0cbac8c326bd17e54cc01d10324ed8d5e120ef092856a21604b6a2</hash>
+         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\fat_fs\hardware_access\diskio.c</file>
@@ -3744,15 +3744,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\sdspi\drv_sdspi.h</file>
-         <hash>753aa0de25a73257a193e7f4a36fff0750ca68ce2175615aad6aa1a6b141652b</hash>
+         <hash>b33d6b822b44e0b83cf616e72cf454d6c721ec2cc1704d681789ea2eea95e63c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\time\src\sys_time.c</file>
-         <hash>ddec1a83e32b63552ae72f884dc849e376b60d411669554f7ec492fff180662f</hash>
+         <hash>4c2c39bc061655a06d6da7bd1f448c4de26a181e5710d74b4391923fb37ddadb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>cd43309b65db8711c140d36da22d45f2bb307e06b0d20a1e5a32a78cef1bae8c</hash>
+         <hash>6a4f6450f052d755f3aaae24ce78418ec01f298b42334ff81de3dce2b4157acc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\int\src\sys_int.c</file>
@@ -3768,7 +3768,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\debug\sys_debug.h</file>
-         <hash>970de73fb9806906b5429168c66ab403309d8a9cad46febab875a5e6d071525e</hash>
+         <hash>16fbc4bbf026e4713e9b835b1511411e053aaf92ab7d6a000638630576fe92b3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\sdspi\src\drv_sdspi_plib_interface.c</file>
@@ -3776,7 +3776,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\stdio\xc32_monitor.c</file>
-         <hash>26e5749db654ed433fd94f6c732ef8600d0cbf5196493374cf111877c02b694e</hash>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\system.h</file>
@@ -3788,7 +3788,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\fs\sys_fs_media_manager.h</file>
-         <hash>6cb6bdb605ca6e8b9e683671cffadbbc26a1f686e3eaedc74a6cba860e8ac3c4</hash>
+         <hash>29bda64831783de33b10c3841e1eb703dc9f5b04287c1e26af8f3b75b7197b39</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\system_media.h</file>
