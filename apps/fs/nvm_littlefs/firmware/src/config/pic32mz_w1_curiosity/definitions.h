@@ -50,10 +50,10 @@
 #include <stdbool.h>
 #include "driver/memory/drv_memory_nvm.h"
 #include "peripheral/uart/plib_uart1.h"
+#include "bsp/bsp.h"
 #include "system/fs/sys_fs.h"
 #include "system/fs/sys_fs_media_manager.h"
 #include "system/fs/sys_fs_littlefs_interface.h"
-#include "bsp/bsp.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/cache/plib_cache.h"
