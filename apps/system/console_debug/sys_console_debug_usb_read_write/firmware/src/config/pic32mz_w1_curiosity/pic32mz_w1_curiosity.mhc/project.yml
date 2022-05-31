@@ -20,13 +20,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E8A25523C8CDDC97F3FD108E97BF4A9F
-- generatedChecksum: E65E55268349D2945F1AC4144D0327CC
+- generatedChecksum: 77A61E825804B2CA96FC95734161DDE6
   logicalPath: config/pic32mz_w1_curiosity/driver/usb/usbfs/src
   name: drv_usbfs_device.c
   physicalPath: driver/usb/usbfs/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: E65E55268349D2945F1AC4144D0327CC
+  userChecksum: 77A61E825804B2CA96FC95734161DDE6
 - generatedChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
   logicalPath: config/pic32mz_w1_curiosity
   name: exceptions.c
@@ -34,13 +34,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
-- generatedChecksum: 15D388C830CCE7FBDACCC2A361C5AA79
+- generatedChecksum: F2F0505E3D652355EB33EBE1746DD3DC
   logicalPath: config/pic32mz_w1_curiosity
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 15D388C830CCE7FBDACCC2A361C5AA79
+  userChecksum: F2F0505E3D652355EB33EBE1746DD3DC
 - generatedChecksum: 780DFA06A0B2FAC55F5B1D5437728D9B
   logicalPath: config/pic32mz_w1_curiosity
   name: interrupts.c
@@ -55,27 +55,27 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: 58CB87F62E96FB9FC3866DC3193F93E8
+- generatedChecksum: DD9CF0DA1B2991128E448C8E40953CC7
   logicalPath: config/pic32mz_w1_curiosity/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 58CB87F62E96FB9FC3866DC3193F93E8
-- generatedChecksum: 429DB1DAD12AFC3548143E9BE9DFFF2E
+  userChecksum: DD9CF0DA1B2991128E448C8E40953CC7
+- generatedChecksum: 38F136CAE29312287E94F5A179C8A3F7
   logicalPath: config/pic32mz_w1_curiosity/peripheral/evic
   name: plib_evic.c
   physicalPath: peripheral/evic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 429DB1DAD12AFC3548143E9BE9DFFF2E
-- generatedChecksum: 98AB2CEE4F371667A7FC6D08AD7BC186
+  userChecksum: 38F136CAE29312287E94F5A179C8A3F7
+- generatedChecksum: A487B6AACEBAD2B949EBA0A285444E7D
   logicalPath: config/pic32mz_w1_curiosity/peripheral/gpio
   name: plib_gpio.c
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 98AB2CEE4F371667A7FC6D08AD7BC186
+  userChecksum: A487B6AACEBAD2B949EBA0A285444E7D
 - generatedChecksum: 290251D6FF0845DC4259E0EF74DCB657
   logicalPath: config/pic32mz_w1_curiosity
   name: pmu_init.c
@@ -139,13 +139,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C95CE0ABB86E6B11CF77E8891D294510
-- generatedChecksum: B20E6826CB06BB9DF727A6DE24CF0723
+- generatedChecksum: F709B7B999A505C41BA59D25A4136A63
   logicalPath: config/pic32mz_w1_curiosity
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B20E6826CB06BB9DF727A6DE24CF0723
+  userChecksum: F709B7B999A505C41BA59D25A4136A63
 - generatedChecksum: D2FFA7B8FF0AFC7B18DC164151CA1529
   logicalPath: config/pic32mz_w1_curiosity/usb/src
   name: usb_device.c
@@ -174,13 +174,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 626FCA4EB4EFC70EF4BF7916AC400CD4
-- generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
+- generatedChecksum: 71352EF41F6688AD8408E42970B50B66
   logicalPath: config/pic32mz_w1_curiosity/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7806B30ECAE0D18D08CD583D8775530D
+  userChecksum: 71352EF41F6688AD8408E42970B50B66
 - generatedChecksum: null
   logicalPath: ''
   name: app.h
@@ -188,13 +188,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: null
-- generatedChecksum: D4C6E928D289C9C949F1D14FE0887451
+- generatedChecksum: 1FF2DDF3EFAEA5BC38D5BAF24BB952F4
   logicalPath: config/pic32mz_w1_curiosity/bsp
   name: bsp.h
   physicalPath: bsp
   security: NON_SECURE
   type: HEADER
-  userChecksum: D4C6E928D289C9C949F1D14FE0887451
+  userChecksum: 1FF2DDF3EFAEA5BC38D5BAF24BB952F4
 - generatedChecksum: 84E6AB8185B8FB4F19DF4C7B11EA5148
   logicalPath: config/pic32mz_w1_curiosity
   name: configuration.h
@@ -307,41 +307,41 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 2B5072810107E051495C4B6379DEDA4E
-- generatedChecksum: BFA90471A89ED563A27D8E3D12373D5E
+- generatedChecksum: D9B00CCF87095896FD2DE8B5A025A4CA
   logicalPath: config/pic32mz_w1_curiosity/peripheral/gpio
   name: plib_gpio.h
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: HEADER
-  userChecksum: BFA90471A89ED563A27D8E3D12373D5E
-- generatedChecksum: 3224466D03D8DDF1B5307028B2E5583F
+  userChecksum: D9B00CCF87095896FD2DE8B5A025A4CA
+- generatedChecksum: 7AFFC4178335897ED9D5804CAB531BCF
   logicalPath: config/pic32mz_w1_curiosity/driver/usb/usbfs/src
   name: plib_usbfs.h
   physicalPath: driver/usb/usbfs/src
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3224466D03D8DDF1B5307028B2E5583F
-- generatedChecksum: 3822D4C43CB11882404ECB2B28DD61EA
+  userChecksum: 7AFFC4178335897ED9D5804CAB531BCF
+- generatedChecksum: 9B4B2B2E7722D50697564E6D6E4F9E04
   logicalPath: config/pic32mz_w1_curiosity/driver/usb/usbfs/src
   name: plib_usbfs_header.h
   physicalPath: driver/usb/usbfs/src
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3822D4C43CB11882404ECB2B28DD61EA
-- generatedChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
+  userChecksum: 9B4B2B2E7722D50697564E6D6E4F9E04
+- generatedChecksum: 3AE819DFC5376F6E9AD0427596F24644
   logicalPath: config/pic32mz_w1_curiosity/system/console
   name: sys_console.h
   physicalPath: system/console
   security: NON_SECURE
   type: HEADER
-  userChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
-- generatedChecksum: 6972608768DDBE6E37A2D81B83DF490B
+  userChecksum: 3AE819DFC5376F6E9AD0427596F24644
+- generatedChecksum: FADDA086C6C4E8FD7EBCE117438767A6
   logicalPath: config/pic32mz_w1_curiosity/system/debug
   name: sys_debug.h
   physicalPath: system/debug
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6972608768DDBE6E37A2D81B83DF490B
+  userChecksum: FADDA086C6C4E8FD7EBCE117438767A6
 - generatedChecksum: 47330C2D8F204B2B69F8A86240A564B6
   logicalPath: config/pic32mz_w1_curiosity/system/int
   name: sys_int.h
@@ -1217,13 +1217,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6C4A6859DB16EA8C046F995C6B6C1C6F
-- generatedChecksum: F127C67A3E33E5788C0F057F648EE57C
+- generatedChecksum: 6EB8F9F4A43B9BC2C7A58585AC679650
   logicalPath: config/pic32mz_w1_curiosity/usb
   name: usb_host.h
   physicalPath: usb
   security: NON_SECURE
   type: HEADER
-  userChecksum: F127C67A3E33E5788C0F057F648EE57C
+  userChecksum: 6EB8F9F4A43B9BC2C7A58585AC679650
 - generatedChecksum: 6EBC5E4D06FC96A02ADF3B7416957DD6
   logicalPath: config/pic32mz_w1_curiosity/usb
   name: usb_host_client_driver.h
@@ -1266,13 +1266,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: null
-- generatedChecksum: 38B8D278EA69C81FF16A6EEA4989D1D1
+- generatedChecksum: 5A572F472102C65199D46D0D6E3E66AD
   logicalPath: config/pic32mz_w1_curiosity
   name: p32MZ1025W104132.ld
   physicalPath: ''
   security: NON_SECURE
   type: LINKER
-  userChecksum: 38B8D278EA69C81FF16A6EEA4989D1D1
+  userChecksum: 5A572F472102C65199D46D0D6E3E66AD
 format_version: v1.0
 libraries: []
 settings:

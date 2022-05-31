@@ -1,4 +1,4 @@
-<config configName="pic32mz_w1_curiosity" projectName="sys_console_debug_usb_read_write_pic32mz_w1_curiosity" configVersion="1.1" device="PIC32MZ1025W104132" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.2.4">
+<config configName="pic32mz_w1_curiosity" projectName="sys_console_debug_usb_read_write_pic32mz_w1_curiosity" configVersion="1.1" device="PIC32MZ1025W104132" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.4.4">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -55,7 +55,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.0.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.1.1"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -1091,7 +1091,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CONFIG_SYS_CLK_PBCLK4_FREQ&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;100000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;20000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -2836,7 +2836,7 @@
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\configuration.h</file>
-         <hash>02d786cee51b02872d4f680a311ebfc2301c2502d9a14b991a695a95394ae97e</hash>
+         <hash>9090d12f1df1934e0d59e38f88f6b94599292a35603211a4c60c8ff9176d9bda</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_DeviceAddress_Default.h</file>
@@ -2908,7 +2908,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\gpio\plib_gpio.h</file>
-         <hash>6c011ec6763395cbee9c0b3ddfe94d7490cc6e5a774447031ce7092591040bfb</hash>
+         <hash>6790434a0a01d46089c12e39a77722c274135303c73192e0d1961e08f13d4d02</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_EPnRxEnableEnhanced_PIC32.h</file>
@@ -2924,7 +2924,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\plib_usbfs_header.h</file>
-         <hash>de4765e1ace8ab7636a8ce7d4089368c024d05a513bf0fa8dc0e88d812ddc4b4</hash>
+         <hash>07c3ccbb17435d891ca3ab7c19c5bbd02629324ff4bdeede90d56faa5340136a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_StartOfFrames_Default.h</file>
@@ -2932,7 +2932,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\gpio\plib_gpio.c</file>
-         <hash>a50bedeadcb5a69e7ba01e795c82645b52504125fd08487c4308e9aa920caf65</hash>
+         <hash>217531449a16f82577b69991c2ebd59d083910234a6bff9f84c8796a8f56ed53</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\console\src\sys_console_usb_cdc.h</file>
@@ -3044,7 +3044,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\console\sys_console.h</file>
-         <hash>f4a1d6e28347f9d6dcc091dc65032ef01f9b0651bc710001ba4b2eb4af29f4bb</hash>
+         <hash>e8a97986345fb2c80389834b113384eba523837ee43f7798d9b56be630a6e7b3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_BufferFreeze_Default.h</file>
@@ -3052,7 +3052,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\p32MZ1025W104132.ld</file>
-         <hash>09308de5dfe3ea5211cdd3fc02ea993b7ff098103c055f4643813ffa409c3736</hash>
+         <hash>faa9c359cf4e7de76330fc14ead3392b11c9019b93afdc81801c1f48cc737b50</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\drv_usbfs_variant_mapping.h</file>
@@ -3116,7 +3116,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\usb\usb_host.h</file>
-         <hash>8fe091b3db430b897da28d7f7effb6fffbb882d025c878a54cc5e627909a8cc2</hash>
+         <hash>4ec16dee42ae6b1bad8a7199b44750ccf0c5fa3aee5e44766e7b6dffc9979e83</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_OTG_VbusPowerOnOff_Unsupported.h</file>
@@ -3172,7 +3172,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\clk\plib_clk.c</file>
-         <hash>23e87fbff8b149c8632ae37b7e314458d2c99832fac14f40f41d9d1fd0689cdb</hash>
+         <hash>27e3be820d17d40ef2fa2131621994b1b1d0ea27ee6a73a50de7c56e166fde02</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_GEN_Interrupt_Unsupported.h</file>
@@ -3200,11 +3200,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\system\debug\sys_debug.h</file>
-         <hash>970de73fb9806906b5429168c66ab403309d8a9cad46febab875a5e6d071525e</hash>
+         <hash>16fbc4bbf026e4713e9b835b1511411e053aaf92ab7d6a000638630576fe92b3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\stdio\xc32_monitor.c</file>
-         <hash>26e5749db654ed433fd94f6c732ef8600d0cbf5196493374cf111877c02b694e</hash>
+         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\usb\src\usb_device_mapping.h</file>
@@ -3244,7 +3244,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\plib_usbfs.h</file>
-         <hash>5eb2ba864df4ab3b87342d8ed6661508f1c876a84ef6d55abdfb6ba703ef461c</hash>
+         <hash>e305fe0c89c125541351aff6084023a26e932caa24cde3ad33d64d3b18916a1a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\usb\src\usb_device_local.h</file>
@@ -3368,7 +3368,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\bsp\bsp.h</file>
-         <hash>caa166227c93525b171aadbb25b4be5c481efdb254df6f7df1672332a274933d</hash>
+         <hash>42339c30dd1a689dfc8e2213fd7551e3acbde1b6945dc69f87349a7a943e0752</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_OTG_IDPinState_Unsupported.h</file>
@@ -3424,7 +3424,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\initialization.c</file>
-         <hash>3f836ee414cd74e2794fa80e26c68a3f312eb8b1ac7bf5e254dd550cee71a60c</hash>
+         <hash>508efe9872ee2185067a1bddaa05a68e3cbf63559ba21158ec4f295c1890f616</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\usb\usb_host_client_driver.h</file>
@@ -3440,7 +3440,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\tasks.c</file>
-         <hash>c780cf98cab34518dd38e7225ca974d10b1076a47e0c92bf6f3af627cb23979a</hash>
+         <hash>d04cf365c247c6932ba6d810f0ce9daaba2889fd9381da00c9fa741320db9570</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_LiveSingleEndedZero_Unsupported.h</file>
@@ -3456,7 +3456,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\drv_usbfs_device.c</file>
-         <hash>19a9b3d3ecbfac6a202374935180dcfdfbdf572e65ae22cfdb5111a6ec512101</hash>
+         <hash>04ed761e97236d51a52fa1cfcd5c29f8db2e7a8598d2992c88f7a75060c7ea45</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\exceptions.c</file>
@@ -3484,7 +3484,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\peripheral\evic\plib_evic.c</file>
-         <hash>b8ce034a0add33c782de905b234d89c13558161fa51d2358983696fa03f5d950</hash>
+         <hash>5628f4db05fade1f3476682832d371af2e07bb8af8ea70aa7bffbc719901cdb6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32mz_w1_curiosity\driver\usb\usbfs\src\templates\usb_OTG_InterruptStatus_Default.h</file>
