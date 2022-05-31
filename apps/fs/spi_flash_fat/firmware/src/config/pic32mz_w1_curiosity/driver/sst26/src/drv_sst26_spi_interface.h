@@ -1,23 +1,23 @@
 /*******************************************************************************
-  Board Support Package Header File.
+  SST26 Driver SPI Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    bsp.h
+    drv_sst26_spi_interface.h
 
   Summary:
-    Board Support Package Header File 
+    SST26 Driver PLIB Interface implementation
 
   Description:
-    This file contains constants, macros, type definitions and function
-    declarations 
+    This interface file segregates the SST26 protocol from the underlying
+    hardware layer implementation.
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -37,11 +37,11 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*******************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _BSP_H
-#define _BSP_H
+#ifndef _DRV_SST26_SPI_INTERFACE_H
+#define _DRV_SST26_SPI_INTERFACE_H
 
 // *****************************************************************************
 // *****************************************************************************
@@ -49,76 +49,21 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include "device.h"
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: BSP Macros
-// *****************************************************************************
-// *****************************************************************************
-/*** LED Macros for LED_RED ***/
-#define LED_RED_Toggle() (LATKINV = (1U<<1))
-#define LED_RED_Get() ((PORTK >> 1) & 0x1U)
-#define LED_RED_On() (LATKSET = (1U<<1))
-#define LED_RED_Off() (LATKCLR = (1U<<1))
-/*** LED Macros for LED_GREEN ***/
-#define LED_GREEN_Toggle() (LATKINV = (1U<<3))
-#define LED_GREEN_Get() ((PORTK >> 3) & 0x1U)
-#define LED_GREEN_On() (LATKSET = (1U<<3))
-#define LED_GREEN_Off() (LATKCLR = (1U<<3))
-/*** SWITCH Macros for SWITCH1 ***/
-#define SWITCH1_Get() ((PORTA >> 10) & 0x1U)
-#define SWITCH1_STATE_PRESSED 0U
-#define SWITCH1_STATE_RELEASED 1U
-
-
+#include "drv_sst26_local.h"
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Interface Routines
+// Section: Data Type Definitions
 // *****************************************************************************
 // *****************************************************************************
+void _DRV_SST26_SPIPlibCallbackHandler(uintptr_t context );
 
-// *****************************************************************************
-/* Function:
-    void BSP_Initialize(void)
+void _DRV_SST26_InterfaceInit(DRV_SST26_OBJECT* dObj, DRV_SST26_INIT* sst26Init);
 
-  Summary:
-    Performs the necessary actions to initialize a board
+bool _DRV_SST26_SPIWriteRead(
+    DRV_SST26_OBJECT* dObj,
+    DRV_SST26_TRANSFER_OBJ* transferObj
+);
 
-  Description:
-    This function initializes the LED and Switch ports on the board.  This
-    function must be called by the user before using any APIs present on this
-    BSP.
-
-  Precondition:
-    None.
-
-  Parameters:
-    None
-
-  Returns:
-    None.
-
-  Example:
-    <code>
-    //Initialize the BSP
-    BSP_Initialize();
-    </code>
-
-  Remarks:
-    None
-*/
-
-void BSP_Initialize(void);
-
-#endif // _BSP_H
-
-/*******************************************************************************
- End of File
-*/
+#endif //#ifndef _DRV_SST26_SPI_INTERFACE_H
