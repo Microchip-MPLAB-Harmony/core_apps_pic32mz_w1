@@ -61,15 +61,15 @@
 // *****************************************************************************
 // *****************************************************************************
 /*** LED Macros for LED_RED ***/
-#define LED_RED_Toggle() (LATKINV = (1<<1))
-#define LED_RED_Get() ((PORTK >> 1) & 0x1)
-#define LED_RED_On() (LATKSET = (1<<1))
-#define LED_RED_Off() (LATKCLR = (1<<1))
+#define LED_RED_Toggle() (LATKINV = (1U<<1))
+#define LED_RED_Get() ((PORTK >> 1) & 0x1U)
+#define LED_RED_On() (LATKSET = (1U<<1))
+#define LED_RED_Off() (LATKCLR = (1U<<1))
 /*** LED Macros for LED_GREEN ***/
-#define LED_GREEN_Toggle() (LATKINV = (1<<3))
-#define LED_GREEN_Get() ((PORTK >> 3) & 0x1)
-#define LED_GREEN_On() (LATKSET = (1<<3))
-#define LED_GREEN_Off() (LATKCLR = (1<<3))
+#define LED_GREEN_Toggle() (LATKINV = (1U<<3))
+#define LED_GREEN_Get() ((PORTK >> 3) & 0x1U)
+#define LED_GREEN_On() (LATKSET = (1U<<3))
+#define LED_GREEN_Off() (LATKCLR = (1U<<3))
 
 
 
