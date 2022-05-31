@@ -5,9 +5,9 @@ frameworkPath: ../../../../../..
 processor: PIC32MZ1025W104132
 projectName: ''
 settings:
-  PackageFilter: bootloader;bsp;core;cryptoauthlib;csp;
+  PackageFilter: bootloader;bsp;cec173x_soteria_lib;core;crypto;csp;Devices;dev_packs;harmony-services;net;quick_docs;usb
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
   MERGE_STRATEGY: USER_ALL
-  DFPPath: .\dev_packs\Microchip\PIC32MZ-W_DFP\1.1.145\atdf\PIC32MZ1025W104132.atdf
+  DFPPath: .\dev_packs\Microchip\PIC32MZ-W_DFP\1.6.217\atdf\PIC32MZ1025W104132.atdf

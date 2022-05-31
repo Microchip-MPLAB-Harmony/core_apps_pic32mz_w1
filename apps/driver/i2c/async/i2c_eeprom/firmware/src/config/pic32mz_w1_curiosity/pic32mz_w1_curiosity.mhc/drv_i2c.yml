@@ -41,4 +41,4 @@ children:
             children:
             - {type: Value, value: I2C1_I2C}
 - type: ElementPosition
-  attributes: {x: '378', y: '137', id: drv_i2c}
+  attributes: {x: '378', y: '138', id: drv_i2c}
