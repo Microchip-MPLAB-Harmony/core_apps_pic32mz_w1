@@ -111,13 +111,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DA10C8889278A796D0EE4C6096B57C3
-- generatedChecksum: 295A8A36063D26C48A1B078FDB6518ED
+- generatedChecksum: A46245BB25082D82C5E9F102CFCA00A2
   logicalPath: config/pic32mz_w1_curiosity/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 295A8A36063D26C48A1B078FDB6518ED
+  userChecksum: A46245BB25082D82C5E9F102CFCA00A2
 - generatedChecksum: 54039B366964AB63A484161C5484CEB3
   logicalPath: config/pic32mz_w1_curiosity/peripheral/evic
   name: plib_evic.c
@@ -132,13 +132,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: A487B6AACEBAD2B949EBA0A285444E7D
-- generatedChecksum: 830904221A66F34E6ABAC117F03BCB91
+- generatedChecksum: AEEA2A1E497B15E7773F00D97A7BEA7E
   logicalPath: config/pic32mz_w1_curiosity/peripheral/nvm
   name: plib_nvm.c
   physicalPath: peripheral/nvm
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 830904221A66F34E6ABAC117F03BCB91
+  userChecksum: AEEA2A1E497B15E7773F00D97A7BEA7E
 - generatedChecksum: 6EC4BE010474DACE7E56288DB72D9BFA
   logicalPath: config/pic32mz_w1_curiosity/peripheral/uart
   name: plib_uart1.c
@@ -447,13 +447,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: FADDA086C6C4E8FD7EBCE117438767A6
-- generatedChecksum: EF4071450FF7B2E077C0FE11412C217C
+- generatedChecksum: E399C5FC97EA09C5B8E4722AD233BAFC
   logicalPath: config/pic32mz_w1_curiosity/system/fs
   name: sys_fs.h
   physicalPath: system/fs
   security: NON_SECURE
   type: HEADER
-  userChecksum: EF4071450FF7B2E077C0FE11412C217C
+  userChecksum: E399C5FC97EA09C5B8E4722AD233BAFC
 - generatedChecksum: 0678CFB1CCB1FA3C42322FFA35DD7182
   logicalPath: config/pic32mz_w1_curiosity/system/fs
   name: sys_fs_littlefs_interface.h

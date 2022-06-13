@@ -70,7 +70,7 @@ static uint8_t startupflag = 0;
 #define     LFS_READ_SIZE   2048
 #define     LFS_PROG_SIZE   2048
 #define     LFS_BLOCK_SIZE   2048
-#define     LFS_BLOCK_COUNT   (100*1024/2048)
+#define     LFS_BLOCK_COUNT   (64*1024/2048)
 #define     LFS_BLOCK_CYCLES   16
 #define     LFS_CACHE_SIZE   2048
 #define     LFS_LOOKAHEAD_SIZE   64

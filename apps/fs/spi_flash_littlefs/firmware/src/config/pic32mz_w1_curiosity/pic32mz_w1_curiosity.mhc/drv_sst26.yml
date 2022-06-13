@@ -41,6 +41,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: drv_sst26, value: SPI}
+  - type: Integer
+    attributes: {id: DRV_SST26_RX_DMA_CHANNEL}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_sst26, value: '-1'}
   - type: File
     attributes: {id: DRV_SST26_SOURCE}
     children:
@@ -54,6 +61,13 @@ children:
         attributes: {id: source}
         children:
         - {type: Value, value: driver/sqi_flash/sst26/src/drv_sst26_qspi_spi.c.ftl}
+  - type: Integer
+    attributes: {id: DRV_SST26_TX_DMA_CHANNEL}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: drv_sst26, value: '-1'}
   - type: Boolean
     attributes: {id: DRV_SST26_TX_RX_DMA}
     children:

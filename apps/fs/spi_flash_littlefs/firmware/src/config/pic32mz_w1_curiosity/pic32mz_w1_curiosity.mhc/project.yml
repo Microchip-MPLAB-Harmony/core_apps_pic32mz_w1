@@ -482,13 +482,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: FADDA086C6C4E8FD7EBCE117438767A6
-- generatedChecksum: EF4071450FF7B2E077C0FE11412C217C
+- generatedChecksum: E399C5FC97EA09C5B8E4722AD233BAFC
   logicalPath: config/pic32mz_w1_curiosity/system/fs
   name: sys_fs.h
   physicalPath: system/fs
   security: NON_SECURE
   type: HEADER
-  userChecksum: EF4071450FF7B2E077C0FE11412C217C
+  userChecksum: E399C5FC97EA09C5B8E4722AD233BAFC
 - generatedChecksum: 0678CFB1CCB1FA3C42322FFA35DD7182
   logicalPath: config/pic32mz_w1_curiosity/system/fs
   name: sys_fs_littlefs_interface.h

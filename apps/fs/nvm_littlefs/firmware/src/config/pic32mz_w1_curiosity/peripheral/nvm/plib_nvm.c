@@ -81,8 +81,8 @@ typedef enum
     NVM_UNLOCK_KEY2 = 0x556699AA
 } NVM_UNLOCK_KEYS;
 
-#define NVM_INTERRUPT_ENABLE_MASK   0x1
-#define NVM_INTERRUPT_FLAG_MASK     0x1
+#define NVM_INTERRUPT_ENABLE_MASK   0x40000000
+#define NVM_INTERRUPT_FLAG_MASK     0x40000000
 
 /* ************************************************************************** */
 /* ************************************************************************** */

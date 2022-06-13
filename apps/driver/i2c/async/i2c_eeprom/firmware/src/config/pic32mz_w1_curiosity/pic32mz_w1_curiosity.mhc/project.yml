@@ -55,13 +55,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: BC63F029476140CCD1DA37E9F452EB70
+- generatedChecksum: B8313AC77C34658A50B259D6820FAC58
   logicalPath: config/pic32mz_w1_curiosity/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BC63F029476140CCD1DA37E9F452EB70
+  userChecksum: B8313AC77C34658A50B259D6820FAC58
 - generatedChecksum: D2423E6FDEC627391CE3B2BFCF709263
   logicalPath: config/pic32mz_w1_curiosity/peripheral/evic
   name: plib_evic.c
@@ -138,7 +138,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5D7A288B7A245C6D45D8530CA90E6939
+  userChecksum: D07D8EE2E57E334ECAEB223367A7A6BB
 - generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config/pic32mz_w1_curiosity
   name: device.h
