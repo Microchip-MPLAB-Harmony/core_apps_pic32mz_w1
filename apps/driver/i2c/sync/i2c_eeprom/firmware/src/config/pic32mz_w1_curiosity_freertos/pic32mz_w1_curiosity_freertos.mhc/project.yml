@@ -111,13 +111,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8FDD6248506F28B32C4F5FD9AA0D9C6F
-- generatedChecksum: BFD1AFF7276ACAE085154DC0C9F9507A
+- generatedChecksum: 157B426F37855BD85D3FA59E423E6DE4
   logicalPath: config/pic32mz_w1_curiosity_freertos/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BFD1AFF7276ACAE085154DC0C9F9507A
+  userChecksum: 157B426F37855BD85D3FA59E423E6DE4
 - generatedChecksum: A016102A32B2CCCBCEB9E21B65674F54
   logicalPath: config/pic32mz_w1_curiosity_freertos/peripheral/evic
   name: plib_evic.c
