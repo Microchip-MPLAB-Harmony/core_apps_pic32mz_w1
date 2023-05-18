@@ -1,22 +1,21 @@
-/*******************************************************************************
- System Interrupts File
+/******************************************************************************
+  SD Card (SPI) Driver File System Interface Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    interrupt.c
+    drv_sdspi_file_system.h
 
   Summary:
-    Interrupt vectors mapping
+    SD Card (SPI) Driver Interface Definition
 
   Description:
-    This file maps all the interrupt vectors to their corresponding
-    implementations. If a particular module interrupt is used, then its ISR
-    definition can be found in corresponding PLIB source file. If a module
-    interrupt is not used, then its ISR implementation is mapped to dummy
-    handler.
- *******************************************************************************/
+    The SD Card Driver provides a interface to access the SD Card. This file
+    implements the SD Card Driver file system interface.
+    This file should be included in the project if SD Card driver functionality
+    with File system is needed.
+*******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -42,73 +41,40 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
  *******************************************************************************/
 // DOM-IGNORE-END
+#ifndef DRV_SDSPI_FILE_SYSTEM_H
+#define DRV_SDSPI_FILE_SYSTEM_H
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files
-// *****************************************************************************
-// *****************************************************************************
-#include "configuration.h"
-#include "interrupts.h"
-#include "definitions.h"
-
-
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: System Interrupt Vector Functions
+// Section: Include Files
 // *****************************************************************************
 // *****************************************************************************
 
+#include "driver/sdspi/drv_sdspi.h"
+#include "system/fs/sys_fs_media_manager.h"
 
-/* All the handlers are defined here.  Each will call its PLIB-specific function. */
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+    extern "C" {
+#endif
+// DOM-IGNORE-END
 // *****************************************************************************
 // *****************************************************************************
-// Section: System Interrupt Vector declarations
+// Section: Global objects
 // *****************************************************************************
 // *****************************************************************************
-void CORE_TIMER_Handler (void);
-void SPI2_RX_Handler (void);
-void SPI2_TX_Handler (void);
-void DMA0_Handler (void);
-void DMA1_Handler (void);
 
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: System Interrupt Vector definitions
+// Section: MEMORY Driver File system interface Routines
 // *****************************************************************************
 // *****************************************************************************
-void CORE_TIMER_Handler (void)
-{
-    CORE_TIMER_InterruptHandler();
+
+void DRV_SDSPI_RegisterWithSysFs( const SYS_MODULE_INDEX drvIndex);
+
+#ifdef __cplusplus
 }
+#endif
 
-
-
-void SPI2_RX_Handler (void)
-{
-    SPI2_RX_InterruptHandler();
-}
-
-void SPI2_TX_Handler (void)
-{
-    SPI2_TX_InterruptHandler();
-}
-
-void DMA0_Handler (void)
-{
-    DMA0_InterruptHandler();
-}
-
-void DMA1_Handler (void)
-{
-    DMA1_InterruptHandler();
-}
-
-
-
-
-/*******************************************************************************
- End of File
-*/
+#endif //#ifndef DRV_SDSPI_FILE_SYSTEM_H
