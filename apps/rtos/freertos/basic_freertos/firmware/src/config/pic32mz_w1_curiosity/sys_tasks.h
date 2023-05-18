@@ -1,22 +1,23 @@
 /*******************************************************************************
- System Interrupts File
-
-  Company:
-    Microchip Technology Inc.
+ System Tasks Header File
 
   File Name:
-    interrupt.h
+    sys_tasks.h
 
   Summary:
-    Interrupt vectors mapping
+    This file contains declarations for task handles.
 
   Description:
-    This file contains declarations of device vectors used by Harmony 3
+    Task handles declared in this header file can be used by the application
+    to control the behavior of the tasks.
+
+  Remarks:
+    None
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -39,29 +40,36 @@
  *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef INTERRUPTS_H
-#define INTERRUPTS_H
+#ifndef SYS_TASKS_H
+#define SYS_TASKS_H
 
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-#include <stdint.h>
 
-
+#include "configuration.h"
+#include "definitions.h"
 
 // *****************************************************************************
 // *****************************************************************************
-// Section: Handler Routines
+// Section: RTOS "Tasks" Handles
 // *****************************************************************************
 // *****************************************************************************
+/* Declaration of  TASK1_Tasks task handle */
+extern TaskHandle_t xTASK1_Tasks;
 
-void UART1_FAULT_InterruptHandler( void );
-void UART1_RX_InterruptHandler( void );
-void UART1_TX_InterruptHandler( void );
-void CHANGE_NOTICE_A_InterruptHandler( void );
+/* Declaration of  TASK2_Tasks task handle */
+extern TaskHandle_t xTASK2_Tasks;
+
+/* Declaration of  TASK3_Tasks task handle */
+extern TaskHandle_t xTASK3_Tasks;
+
+/* Declaration of  TASK4_Tasks task handle */
+extern TaskHandle_t xTASK4_Tasks;
 
 
 
-#endif // INTERRUPTS_H
+
+#endif //SYS_TASKS_H
