@@ -57,6 +57,10 @@
 // *****************************************************************************
 // *****************************************************************************
 
+void CORE_TIMER_InterruptHandler( void );
+void SPI2_RX_InterruptHandler( void );
+void SPI2_TX_InterruptHandler( void );
+
 
 
 #endif // INTERRUPTS_H
