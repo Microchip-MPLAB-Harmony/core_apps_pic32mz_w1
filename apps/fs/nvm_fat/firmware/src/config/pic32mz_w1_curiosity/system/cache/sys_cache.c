@@ -136,26 +136,29 @@ void SYS_CACHE_InvalidateDCache (void)
     }
 }
 
-void SYS_CACHE_InvalidateDCache_by_Addr (uint32_t *addr, int32_t size)
+void SYS_CACHE_InvalidateDCache_by_Addr (void *addr, int32_t size)
 {
     if (CACHE_CacheCoherencyGet() != CACHE_DISABLE) // If Data Cache is enabled
     {
-        DCACHE_INVALIDATE_BY_ADDR((uint32_t)addr, (size_t)size);
+        DCACHE_INVALIDATE_BY_ADDR((uint32_t)(uint8_t*)addr, (size_t)size);
     }
 }
 
-void SYS_CACHE_CleanDCache_by_Addr (uint32_t *addr, int32_t size)
+void SYS_CACHE_CleanDCache_by_Addr (void *addr, int32_t size)
 {
     if (CACHE_CacheCoherencyGet() != CACHE_DISABLE) // If Data Cache is enabled
     {
-        DCACHE_CLEAN_BY_ADDR((uint32_t)addr, (size_t)size);
+        DCACHE_CLEAN_BY_ADDR((uint32_t)(uint8_t*)addr, (size_t)size);
+    }
+}
+/* MISRA C-2012 Rule 5.1 deviated:1 Deviation record ID -  H3_MISRAC_2012_R_5_2_DR_1 */
+
+void SYS_CACHE_CleanInvalidateDCache_by_Addr (void *addr, int32_t size)
+{
+    if (CACHE_CacheCoherencyGet() != CACHE_DISABLE) // If Data Cache is enabled
+    {
+        DCACHE_CLEAN_INVALIDATE_BY_ADDR((uint32_t)(uint8_t*)addr, (size_t)size);
     }
 }
 
-void SYS_CACHE_CleanInvalidateDCache_by_Addr (uint32_t *addr, int32_t size)
-{
-    if (CACHE_CacheCoherencyGet() != CACHE_DISABLE) // If Data Cache is enabled
-    {
-        DCACHE_CLEAN_INVALIDATE_BY_ADDR((uint32_t)addr, (size_t)size);
-    }
-}
+/* MISRAC 2012 deviation block end */
