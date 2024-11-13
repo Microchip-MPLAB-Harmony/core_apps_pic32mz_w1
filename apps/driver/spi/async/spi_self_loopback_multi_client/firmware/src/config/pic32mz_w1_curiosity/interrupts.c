@@ -76,12 +76,12 @@ void SPI2_TX_Handler (void);
 // Section: System Interrupt Vector definitions
 // *****************************************************************************
 // *****************************************************************************
-void __ISR(_SPI2_RX_VECTOR, ipl1SRS) SPI2_RX_Handler (void)
+void __attribute__((used)) __ISR(_SPI2_RX_VECTOR, ipl1SRS) SPI2_RX_Handler (void)
 {
     SPI2_RX_InterruptHandler();
 }
 
-void __ISR(_SPI2_TX_VECTOR, ipl1SRS) SPI2_TX_Handler (void)
+void __attribute__((used)) __ISR(_SPI2_TX_VECTOR, ipl1SRS) SPI2_TX_Handler (void)
 {
     SPI2_TX_InterruptHandler();
 }
