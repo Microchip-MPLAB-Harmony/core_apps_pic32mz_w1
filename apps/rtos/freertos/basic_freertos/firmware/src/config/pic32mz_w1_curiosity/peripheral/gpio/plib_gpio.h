@@ -69,6 +69,7 @@
 #define SWITCH1_OutputEnable()      (TRISACLR = (1U<<10))
 #define SWITCH1_InputEnable()       (TRISASET = (1U<<10))
 #define SWITCH1_Get()               ((PORTA >> 10) & 0x1U)
+#define SWITCH1_GetLatch()          ((LATA >> 10) & 0x1U)
 #define SWITCH1_PIN                  GPIO_PIN_RA10
 #define SWITCH1_InterruptEnable()   (CNENASET = (1U<<10))
 #define SWITCH1_InterruptDisable()  (CNENACLR = (1U<<10))
@@ -250,7 +251,7 @@ typedef struct {
 
 static inline void GPIO_PinWrite(GPIO_PIN pin, bool value)
 {
-	 uint32_t xvalue = (uint32_t)value;
+     uint32_t xvalue = (uint32_t)value;
     GPIO_PortWrite((pin>>4U), (uint32_t)(0x1U) << (pin & 0xFU), (xvalue) << (pin & 0xFU));
 }
 
