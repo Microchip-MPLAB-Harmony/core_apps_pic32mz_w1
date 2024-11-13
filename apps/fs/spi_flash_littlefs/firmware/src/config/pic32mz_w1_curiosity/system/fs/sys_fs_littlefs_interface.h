@@ -35,9 +35,9 @@ extern "C" {
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdarg.h>
-    
+
 #define FILE_NAME_LEN   255
-    
+
     /* File status structure (FILINFO) */
 typedef struct {
     uint32_t    fsize;      /* File size */
@@ -51,6 +51,8 @@ typedef struct {
     /* Size of LFN buffer in TCHAR */
     uint32_t    lfsize;
 } LITTLEFS_STATUS;
+
+extern const char* szLicense;
 
 typedef enum lfs_error LITTLEFS_ERR;
 
@@ -93,6 +95,12 @@ int LITTLEFS_rename (const char* path_old, const char* path_new);
 int LITTLEFS_mkfs (uint8_t vol, void* opt, void* work, uint32_t len);
 
 int LITTLEFS_sync (uintptr_t handle);
+
+int LITTLEFS_getclusters (const char *path, uint32_t *totalSectors, uint32_t *freeSectors);
+
+char* LITTLEFS_gets (char *buff, int len, uintptr_t handle);
+
+int LITTLEFS_puts (const char *buff, uintptr_t handle);
 
 #ifdef __cplusplus
 }
