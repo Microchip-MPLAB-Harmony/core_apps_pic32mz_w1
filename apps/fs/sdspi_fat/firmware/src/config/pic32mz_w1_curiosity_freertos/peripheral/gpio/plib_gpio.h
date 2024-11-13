@@ -69,6 +69,7 @@
 #define GPIO_RK7_OutputEnable()      (TRISKCLR = (1U<<7))
 #define GPIO_RK7_InputEnable()       (TRISKSET = (1U<<7))
 #define GPIO_RK7_Get()               ((PORTK >> 7) & 0x1U)
+#define GPIO_RK7_GetLatch()          ((LATK >> 7) & 0x1U)
 #define GPIO_RK7_PIN                  GPIO_PIN_RK7
 
 
@@ -224,7 +225,7 @@ void GPIO_PortOutputEnable(GPIO_PORT port, uint32_t mask);
 
 static inline void GPIO_PinWrite(GPIO_PIN pin, bool value)
 {
-	 uint32_t xvalue = (uint32_t)value;
+     uint32_t xvalue = (uint32_t)value;
     GPIO_PortWrite((pin>>4U), (uint32_t)(0x1U) << (pin & 0xFU), (xvalue) << (pin & 0xFU));
 }
 
