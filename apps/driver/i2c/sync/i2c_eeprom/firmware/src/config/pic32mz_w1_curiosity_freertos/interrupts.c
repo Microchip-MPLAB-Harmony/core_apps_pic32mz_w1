@@ -78,12 +78,12 @@ void I2C1_MASTER_Handler (void);
 // *****************************************************************************
 
 
-void I2C1_BUS_Handler (void)
+void __attribute__((used)) I2C1_BUS_Handler (void)
 {
     I2C1_BUS_InterruptHandler();
 }
 
-void I2C1_MASTER_Handler (void)
+void __attribute__((used)) I2C1_MASTER_Handler (void)
 {
     I2C1_MASTER_InterruptHandler();
 }
