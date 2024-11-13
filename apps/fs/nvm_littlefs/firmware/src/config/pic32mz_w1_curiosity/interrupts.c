@@ -78,22 +78,22 @@ void UART1_TX_Handler (void);
 // Section: System Interrupt Vector definitions
 // *****************************************************************************
 // *****************************************************************************
-void __ISR(_FLASH_CONTROL_VECTOR, ipl1SRS) FLASH_CONTROL_Handler (void)
+void __attribute__((used)) __ISR(_FLASH_CONTROL_VECTOR, ipl1SRS) FLASH_CONTROL_Handler (void)
 {
     NVM_InterruptHandler();
 }
 
-void __ISR(_UART1_FAULT_VECTOR, ipl1SRS) UART1_FAULT_Handler (void)
+void __attribute__((used)) __ISR(_UART1_FAULT_VECTOR, ipl1SRS) UART1_FAULT_Handler (void)
 {
     UART1_FAULT_InterruptHandler();
 }
 
-void __ISR(_UART1_RX_VECTOR, ipl1SRS) UART1_RX_Handler (void)
+void __attribute__((used)) __ISR(_UART1_RX_VECTOR, ipl1SRS) UART1_RX_Handler (void)
 {
     UART1_RX_InterruptHandler();
 }
 
-void __ISR(_UART1_TX_VECTOR, ipl1SRS) UART1_TX_Handler (void)
+void __attribute__((used)) __ISR(_UART1_TX_VECTOR, ipl1SRS) UART1_TX_Handler (void)
 {
     UART1_TX_InterruptHandler();
 }

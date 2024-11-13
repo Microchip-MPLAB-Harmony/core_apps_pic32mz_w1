@@ -144,9 +144,10 @@
 // *****************************************************************************
 // *****************************************************************************
 /* Following MISRA-C rules are deviated in the below code block */
-/* MISRA C-2012 Rule 11.1 */
-/* MISRA C-2012 Rule 11.3 */
-/* MISRA C-2012 Rule 11.8 */
+/* MISRA C-2012 Rule 7.2 - Deviation record ID - H3_MISRAC_2012_R_7_2_DR_1 */
+/* MISRA C-2012 Rule 11.1 - Deviation record ID - H3_MISRAC_2012_R_11_1_DR_1 */
+/* MISRA C-2012 Rule 11.3 - Deviation record ID - H3_MISRAC_2012_R_11_3_DR_1 */
+/* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
 // <editor-fold defaultstate="collapsed" desc="DRV_MEMORY Instance 0 Initialization Data">
 
 static uint8_t gDrvMemory0EraseBuffer[NVM_ERASE_BUFFER_SIZE] CACHE_ALIGN;
@@ -212,13 +213,13 @@ static const SYS_FS_FUNCTIONS LittleFSFunctions =
     .mount             = LITTLEFS_mount,
     .unmount           = LITTLEFS_unmount,
     .open              = LITTLEFS_open,
-    .read_t              = LITTLEFS_read,
+    .read_t            = LITTLEFS_read,
     .close             = LITTLEFS_close,
     .seek              = LITTLEFS_lseek,
     .fstat             = LITTLEFS_stat,
     .getlabel          = NULL,
     .currWD            = NULL,
-    .getstrn           = NULL,
+    .getstrn           = LITTLEFS_gets,
     .openDir           = LITTLEFS_opendir,
     .readDir           = LITTLEFS_readdir,
     .closeDir          = LITTLEFS_closedir,
@@ -238,11 +239,11 @@ static const SYS_FS_FUNCTIONS LittleFSFunctions =
     .chmode            = NULL,
     .chtime            = NULL,
     .putchr            = NULL,
-    .putstrn           = NULL,
+    .putstrn           = LITTLEFS_puts,
     .formattedprint    = NULL,
     .testerror         = NULL,
     .partitionDisk     = NULL,
-    .getCluster        = NULL
+    .getCluster        = LITTLEFS_getclusters
 };
 
 
@@ -336,7 +337,6 @@ void SYS_Initialize ( void* data )
 
 	BSP_Initialize();
     NVM_Initialize();
-
 
 
     /* MISRAC 2012 deviation block start */
