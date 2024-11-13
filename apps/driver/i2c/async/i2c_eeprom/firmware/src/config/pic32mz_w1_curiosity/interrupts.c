@@ -76,12 +76,12 @@ void I2C1_MASTER_Handler (void);
 // Section: System Interrupt Vector definitions
 // *****************************************************************************
 // *****************************************************************************
-void __ISR(_I2C1_BUS_VECTOR, ipl1SRS) I2C1_BUS_Handler (void)
+void __attribute__((used)) __ISR(_I2C1_BUS_VECTOR, ipl1SRS) I2C1_BUS_Handler (void)
 {
     I2C1_BUS_InterruptHandler();
 }
 
-void __ISR(_I2C1_MASTER_VECTOR, ipl1SRS) I2C1_MASTER_Handler (void)
+void __attribute__((used)) __ISR(_I2C1_MASTER_VECTOR, ipl1SRS) I2C1_MASTER_Handler (void)
 {
     I2C1_MASTER_InterruptHandler();
 }
